@@ -1,0 +1,68 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.swp
+
+pids
+logs
+results
+tmp
+uploads
+
+# Build
+public/css/main.css
+
+# Coverage reports
+coverage
+
+# Dependency directory
+node_modules/
+jspm_packages/
+bower_components/
+web_modules/
+
+# log file ignore
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+lerna-debug.log
+.serverless
+
+# dotenv environment variables file
+.env
+.env.test
+.custom-env
+
+# code editors vscode
+.vscode-test
+.vscode
+
+# Editors
+.idea
+*.iml
+.vscode
+
+# cache files
+.yarn/cache
+.yarn/unplugged
+.yarn/install-state.gz
+.eslintcache
+.cache
+.parcel-cache
+.npm
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Ignore built ts files
+dist/**/*
+
+# ignore .lock
+# yarn.lock
+# package.lock
