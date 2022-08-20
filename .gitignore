@@ -40,12 +40,12 @@ lerna-debug.log
 
 # code editors vscode
 .vscode-test
-.vscode
+# .vscode
 
 # Editors
 .idea
 *.iml
-.vscode
+# .vscode
 
 # cache files
 .yarn/cache
