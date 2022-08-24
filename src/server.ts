@@ -1,7 +1,6 @@
-import express, { Application, Request, Response } from 'express';
+import { Request, Response } from 'express';
+import app from './app';
 import env from './config';
-
-const app: Application = express();
 
 app.get('/', (req: Request, res: Response) => {
   res.send('<h2>Hi There!</h2>');
