@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  express-boilerplate-dev:
+    container_name: express-boilerplate-dev
+    restart: unless-stopped
+    build:
+      context: .
+      target: development
+    volumes:
+      - ./src:/app/src
+    ports:
+      - 5000:5000
+    env_file:
+      - ./.env
+    depends_on:
+      - mongo
+      - redis
+    command: yarn dev
+    networks:
+      - mydockernet
+
+  mongo:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo:/data/db
+    networks:
+      - mydockernet
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo
+    ports:
+      - 8080:8081
+    volumes:
+      - mongo-express:/data/db
+    networks:
+      - mydockernet
+
+  redis:
+    image: redis
+    container_name: redis
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - redis:/data
+    networks:
+      - mydockernet
+
+volumes:
+  mongo:
+  mongo-express:
+  redis:
+
+networks:
+  mydockernet:
+    driver: bridge

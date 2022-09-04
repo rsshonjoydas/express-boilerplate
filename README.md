@@ -54,8 +54,7 @@ Please follow the below instructions to run this project in your computer:
       ```sh
       yarn add -D @types/express \
                   @types/node \
-                  nodemon \
-                  ts-node \
+                  ts-node-dev \
                   tsc \
                   typescript
       ```
@@ -85,9 +84,9 @@ Please follow the below instructions to run this project in your computer:
     - Finally, let's set up package in the `package.json file so that it runs Prettier on JS files:
       ```sh
       "scripts": {
-        "start": "node ./dist/server.js",
-        "watch": "tsc -w",
-        "dev": "nodemon -L ./src/server.ts && watch"
+        "dev": "ts-node-dev --poll src/server.ts",
+        "build": "rimraf ./dist && tsc",
+        "start": "yarn build && node dist/server.js",
       },
       ```
 
@@ -196,7 +195,53 @@ Please follow the below instructions to run this project in your computer:
        node_modules
       ```
 
-4.  Git hooks and husky
+4.  Add some necessary configuration packages
+
+    - Install configuration packages in your dependencies
+
+      ```sh
+      yarn add body-parser \
+                compression \
+                cors \
+                express-rate-limit \
+                helmet \
+                pino-http
+      ```
+
+    - Install types in your devDependencies
+      ```sh
+      yarn add -D @types/compression @types/cors
+      ```
+
+5.  Add custom logger
+
+    - Install configuration packages in your dependencies
+
+      ```sh
+      yarn add dayjs \
+                pino \
+                pino-http \
+                pino-pretty
+      ```
+
+6.  MongoDB and Redis configuration
+
+    - Install configuration packages in your dependencies
+
+      ```sh
+      yarn add connect-redis \
+                express-session \
+                mongoose \
+                redis
+      ```
+
+    - Install types in your devDependencies
+      ```sh
+      yarn add -D @types/connect-redis \
+                  @types/express-session
+      ```
+
+7.  Git hooks and husky
 
     - Install configuration packages in your devDependencies
 
@@ -239,7 +284,7 @@ Please follow the below instructions to run this project in your computer:
     - We also need to enable the husky hooks:
 
       ```sh
-        yarn husky install
+      yarn husky install
       ```
 
     - Finally, let's set up lint-staged in the `package.json file so that it runs Prettier on JS files:

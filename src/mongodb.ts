@@ -13,8 +13,14 @@ type IDatabaseOptions = {
 };
 
 // ! Database connection
+
 // ? MongoDB connection locally
-const uri = `mongodb://${env.MONGO_USERNAME}:${env.MONGO_PASSWORD}@${env.MONGO_IP}:${env.MONGO_PORT}/${env.MONGO_NAME}?authSource=admin`;
+// * MongoDB connection local machine
+const uri = `mongodb://${env.MONGO_IP}:${env.MONGO_PORT}/${env.MONGO_NAME}`;
+
+// * MongoDB connection docker machine
+// const uri = `mongodb://${env.MONGO_USERNAME}:${env.MONGO_PASSWORD}@${env.MONGO_IP}:${env.MONGO_PORT}/${env.MONGO_NAME}?authSource=admin`;
+
 // ? MongoDB connection remotely
 // const uri = `mongodb+srv://${env.MONGO_USERNAME}:${env.MONGO_PASSWORD}@${env.MONGO_HOST}/${env.MONGO_NAME}?retryWrites=true&w=majority`;
 
