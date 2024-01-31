@@ -11,8 +11,11 @@
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [How to run](#how-to-run)
 - [Manual Setup](#manual-setup)
+        - [Git commit message](#git-commit-message)
+        - [Skipping Hooks](#skipping-hooks)
 - [Contact](#contact)
 
 <!-- HOW TO RUN -->
@@ -52,11 +55,7 @@ Please follow the below instructions to run this project in your computer:
     - Install TypeScript and nodemon packages
 
       ```sh
-      yarn add -D @types/express \
-                  @types/node \
-                  ts-node-dev \
-                  tsc \
-                  typescript
+      yarn add -D @types/express @types/node ts-node-dev tsc typescript
       ```
 
     - Add this configuration to your project tsconfig.json
@@ -119,17 +118,7 @@ Please follow the below instructions to run this project in your computer:
     - Install those packages in devDependencies
 
       ```sh
-      yarn add -D eslint-config-airbnb-base \
-                  eslint-config-airbnb-typescript \
-                  @typescript-eslint/eslint-plugin@^5.13.0 \
-                  @typescript-eslint/parser@^5.0.0 \
-                  eslint \
-                  prettier \
-                  eslint-plugin-prettier \
-                  eslint-config-prettier \
-                  eslint-plugin-node \
-                  eslint-config-node \
-                  eslint-plugin-import
+      yarn add -D eslint-config-airbnb-base eslint-config-airbnb-typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint prettier eslint-plugin-prettier eslint-config-prettier eslint-plugin-node eslint-config-node eslint-plugin-import
       ```
 
     - We need to add some configuration to a file named .eslintrc.json like this:
@@ -200,12 +189,7 @@ Please follow the below instructions to run this project in your computer:
     - Install configuration packages in your dependencies
 
       ```sh
-      yarn add body-parser \
-                compression \
-                cors \
-                express-rate-limit \
-                helmet \
-                pino-http
+      yarn add body-parser compression cors express-rate-limit helmet pino-http
       ```
 
     - Install types in your devDependencies
@@ -218,10 +202,7 @@ Please follow the below instructions to run this project in your computer:
     - Install configuration packages in your dependencies
 
       ```sh
-      yarn add dayjs \
-                pino \
-                pino-http \
-                pino-pretty
+      yarn add dayjs pino pino-http pino-pretty
       ```
 
 6.  MongoDB and Redis configuration
@@ -229,16 +210,12 @@ Please follow the below instructions to run this project in your computer:
     - Install configuration packages in your dependencies
 
       ```sh
-      yarn add connect-redis \
-                express-session \
-                mongoose \
-                redis
+      yarn add connect-redis express-session mongoose redis
       ```
 
     - Install types in your devDependencies
       ```sh
-      yarn add -D @types/connect-redis \
-                  @types/express-session
+      yarn add -D @types/connect-redis @types/express-session
       ```
 
 7.  Git hooks and husky
@@ -246,11 +223,7 @@ Please follow the below instructions to run this project in your computer:
     - Install configuration packages in your devDependencies
 
       ```sh
-      yarn add -D @commitlint/cli \
-                  @commitlint/config-conventional \
-                  husky \
-                  lint-staged \
-                  validate-branch-name
+      yarn add -D @commitlint/cli @commitlint/config-conventional husky lint-staged validate-branch-name
       ```
 
     - We need to add some configuration to a file named commitlint.config.js like this:
